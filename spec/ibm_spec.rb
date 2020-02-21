@@ -68,7 +68,7 @@ describe 'java::ibm' do
 
   context 'install on centos' do
     let(:chef_run) do
-      runner = ChefSpec::SoloRunner.new(platform: 'centos', version: '6.8')
+      runner = ChefSpec::SoloRunner.new(platform: 'centos', version: '6')
       runner.node.override['java']['install_flavor'] = 'ibm'
       runner.node.override['java']['ibm']['checksum'] = 'deadbeef'
       runner.node.override['java']['ibm']['accept_ibm_download_terms'] = true

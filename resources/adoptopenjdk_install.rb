@@ -7,8 +7,6 @@
 
 resource_name :adoptopenjdk_install
 
-default_action :install
-
 property :url, String
 property :checksum, String, regex: /^[0-9a-f]{32}$|^[a-zA-Z0-9]{40,64}$/
 property :md5, String, regex: /^[0-9a-f]{32}$|^[a-zA-Z0-9]{40,64}$/

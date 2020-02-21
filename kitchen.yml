@@ -10,39 +10,42 @@ verifier:
   name: inspec
 
 platforms:
-  - name: amazon-linux
-    driver_config:
-      box: mvbcoding/awslinux
+  - name: amazonlinux-2
   - name: centos-6
   - name: centos-7
+  - name: centos-8
   - name: debian-8
   - name: debian-9
-  - name: freebsd-11
-  - name: fedora-29
-  - name: opensuse-leap-42
+  - name: debian-10
+  - name: freebsd-12
+  - name: fedora-latest
+  - name: opensuse-leap-15
   - name: ubuntu-16.04
   - name: ubuntu-18.04
 
 suites:
   - name: openjdk-7
     includes:
-      - amazon-linux
+      - amazonlinux-2
       - centos-6
       - centos-7
+      - centos-8
       - debian-8
-      - freebsd-11
-      - opensuse-leap-42
+      - freebsd-12
+      - opensuse-leap-15
     run_list:
       - recipe[test::openjdk7]
   - name: openjdk-8
     includes:
-      - amazon-linux
+      - amazonlinux-2
       - centos-6
       - centos-7
+      - centos-8
       - debian-9
-      - fedora-29
-      - freebsd-11
-      - opensuse-leap-42
+      - debian-10
+      - fedora-latest
+      - freebsd-12
+      - opensuse-leap-15
       - ubuntu-16.04
       - ubuntu-18.04
     run_list:
@@ -62,11 +65,13 @@ suites:
       - recipe[test::openjdk_direct]
   - name: adoptopenjdk-8-openj9
     includes:
-      - amazon-linux
+      - amazonlinux-2
       - centos-6
       - centos-7
+      - centos-8
       - debian-8
       - debian-9
+      - debian-10
       - ubuntu-16.04
       - ubuntu-18.04
     run_list:
@@ -78,11 +83,13 @@ suites:
         - test/integration/adoptopenjdk/attributes/adoptopenjdk-8-openj9.yml
   - name: adoptopenjdk-10-openj9
     includes:
-      - amazon-linux
+      - amazonlinux-2
       - centos-6
       - centos-7
+      - centos-8
       - debian-8
       - debian-9
+      - debian-10
       - ubuntu-16.04
       - ubuntu-18.04
     run_list:
@@ -94,11 +101,13 @@ suites:
         - test/integration/adoptopenjdk/attributes/adoptopenjdk-10-openj9.yml
   - name: adoptopenjdk-10-hotspot
     includes:
-      - amazon-linux
+      - amazonlinux-2
       - centos-6
       - centos-7
+      - centos-8
       - debian-8
       - debian-9
+      - debian-10
       - ubuntu-16.04
       - ubuntu-18.04
     run_list:
@@ -110,11 +119,13 @@ suites:
         - test/integration/adoptopenjdk/attributes/adoptopenjdk-10-hotspot.yml
   - name: adoptopenjdk-11-hotspot
     includes:
-      - amazon-linux
+      - amazonlinux-2
       - centos-6
       - centos-7
+      - centos-8
       - debian-8
       - debian-9
+      - debian-10
       - ubuntu-16.04
       - ubuntu-18.04
     run_list:
@@ -126,11 +137,13 @@ suites:
         - test/integration/adoptopenjdk/attributes/adoptopenjdk-11-hotspot.yml
   - name: adoptopenjdk-11-openj9
     includes:
-      - amazon-linux
+      - amazonlinux-2
       - centos-6
       - centos-7
+      - centos-8
       - debian-8
       - debian-9
+      - debian-10
       - ubuntu-16.04
       - ubuntu-18.04
     run_list:
@@ -142,11 +155,13 @@ suites:
         - test/integration/adoptopenjdk/attributes/adoptopenjdk-11-openj9.yml
   - name: adoptopenjdk-11-openj9-large-heap
     includes:
-      - amazon-linux
+      - amazonlinux-2
       - centos-6
       - centos-7
+      - centos-8
       - debian-8
       - debian-9
+      - debian-10
       - ubuntu-16.04
       - ubuntu-18.04
     run_list:
@@ -158,11 +173,13 @@ suites:
         - test/integration/adoptopenjdk/attributes/adoptopenjdk-11-openj9-large-heap.yml
   - name: adoptopenjdk-removal-11-openj9
     includes:
-      - amazon-linux
+      - amazonlinux-2
       - centos-6
       - centos-7
+      - centos-8
       - debian-8
       - debian-9
+      - debian-10
       - ubuntu-16.04
       - ubuntu-18.04
     run_list:
@@ -174,22 +191,26 @@ suites:
         - test/integration/adoptopenjdk/attributes/adoptopenjdk-11-openj9.yml
   - name: corretto-8
     includes:
-      - amazon-linux
+      - amazonlinux-2
       - centos-6
       - centos-7
+      - centos-8
       - debian-8
       - debian-9
+      - debian-10
       - ubuntu-16.04
       - ubuntu-18.04
     run_list:
       - recipe[test::corretto8]
   - name: corretto-11
     includes:
-      - amazon-linux
+      - amazonlinux-2
       - centos-6
       - centos-7
+      - centos-8
       - debian-8
       - debian-9
+      - debian-10
       - ubuntu-16.04
       - ubuntu-18.04
     run_list:

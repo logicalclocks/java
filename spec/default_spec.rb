@@ -3,8 +3,7 @@ require 'spec_helper'
 describe 'java::default' do
   let(:chef_run) do
     runner = ChefSpec::SoloRunner.new(
-      platform: 'debian',
-      version: '7.11'
+      platform: 'debian'
     )
     runner.converge(described_recipe)
   end

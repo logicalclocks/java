@@ -43,7 +43,7 @@ describe 'java::corretto' do
 
     context 'centos' do
       let(:chef_run) do
-        runner = ChefSpec::SoloRunner.new(platform: 'centos', version: '7.5')
+        runner = ChefSpec::SoloRunner.new(platform: 'centos', version: '7')
         runner.node.override['java']['jdk_version'] = '11'
         runner.node.override['java']['install_flavor'] = 'corretto'
         runner.converge('java::default')

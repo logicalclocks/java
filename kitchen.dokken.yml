@@ -40,6 +40,13 @@ platforms:
       intermediate_instructions:
         - RUN /usr/bin/apt-get update
 
+  - name: debian-10
+    driver:
+      image: dokken/debian-10
+      pid_one_command: /bin/systemd
+      intermediate_instructions:
+        - RUN /usr/bin/apt-get update
+
   - name: centos-6
     driver:
       image: dokken/centos-6
@@ -50,9 +57,14 @@ platforms:
       image: dokken/centos-7
       pid_one_command: /usr/lib/systemd/systemd
 
-  - name: fedora-29
+  - name: centos-8
     driver:
-      image: dokken/fedora-29
+      image: dokken/centos-8
+      pid_one_command: /usr/lib/systemd/systemd
+
+  - name: fedora-latest
+    driver:
+      image: dokken/fedora-latest
       pid_one_command: /usr/lib/systemd/systemd
 
   - name: ubuntu-16.04
