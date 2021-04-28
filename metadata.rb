@@ -21,3 +21,7 @@ supports 'suse'
 supports 'opensuseleap'
 
 depends 'line'
+
+attribute "java/install_jdk",
+          :description => "Flag to skip installing jdk. Default: true",
+          :type => 'string'
