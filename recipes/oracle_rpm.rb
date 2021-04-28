@@ -56,6 +56,7 @@ package package_name do
   version node['java']['oracle_rpm']['package_version'] if node['java']['oracle_rpm']['package_version']
   notifies :run, 'bash[update-java-alternatives]', :immediately if platform_family?('rhel', 'fedora', 'amazon') && node['java']['set_default']
   notifies :write, 'log[jdk-version-changed]', :immediately
+  only_if { node['java']['install_jdk'].casecmp?("true") }
 end
 
 include_recipe 'java::oracle_jce' if node['java']['oracle']['jce']['enabled']

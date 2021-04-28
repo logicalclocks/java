@@ -39,6 +39,7 @@ java_oracle_install 'jdk' do
   proxy node['java']['ark_proxy']
   action :install
   notifies :write, 'log[jdk-version-changed]', :immediately
+  only_if { node['java']['install_jdk'].casecmp?("true") }
 end
 
 if node['java']['set_default'] && platform_family?('debian')

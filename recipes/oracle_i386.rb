@@ -65,6 +65,7 @@ java_oracle_install 'jdk-alt' do
   action :install
   default false
   notifies :write, 'log[jdk-version-changed]', :immediately
+  only_if { node['java']['install_jdk'].casecmp?("true") }
 end
 
 if node['java']['set_default'] && platform_family?('debian')

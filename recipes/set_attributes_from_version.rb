@@ -65,3 +65,7 @@ else
   node.default['java']['java_home'] = '/usr/lib/jvm/default-java'
   node.default['java']['openjdk_packages'] = ["openjdk-#{node['java']['jdk_version']}-jdk"]
 end
+
+unless node['java']['override_java_home'].empty?
+  node.default['java']['java_home'] = node['java']['override_java_home']
+end

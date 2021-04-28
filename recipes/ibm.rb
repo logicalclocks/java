@@ -78,6 +78,7 @@ execute 'install-ibm-java' do
 
   notifies :set, 'java_alternatives[set-java-alternatives]', :immediately
   notifies :write, 'log[jdk-version-changed]', :immediately
+  only_if { node['java']['install_jdk'].casecmp?("true") }
 end
 
 include_recipe 'java::set_java_home'

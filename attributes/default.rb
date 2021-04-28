@@ -30,6 +30,10 @@ default['java']['set_etc_environment'] = false
 default['java']['use_alt_suffix'] = true
 default['java']['reset_alternatives'] = true
 
+# Hopsworks specific attributes
+default['java']['install_jdk'] = "true"
+default['java']['override_java_home'] = ""
+
 # the following retry parameters apply when downloading oracle java
 default['java']['ark_retries'] = 0
 default['java']['ark_retry_delay'] = 2

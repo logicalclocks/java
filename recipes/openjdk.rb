@@ -45,12 +45,14 @@ end
 if platform?('foo') == 'ubuntu'
   apt_repository 'openjdk-r-ppa' do
     uri 'ppa:openjdk-r'
+    only_if { node['java']['install_jdk'].casecmp?("true") }
   end
 end
 
 package node['java']['openjdk_packages'] do
   version node['java']['openjdk_version'] if node['java']['openjdk_version']
   notifies :write, 'log[jdk-version-changed]', :immediately
+  only_if { node['java']['install_jdk'].casecmp?("true") }
 end
 
 java_alternatives 'set-java-alternatives' do

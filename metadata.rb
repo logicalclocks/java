@@ -24,4 +24,12 @@ depends 'windows'
 
 source_url 'https://github.com/sous-chefs/java'
 issues_url 'https://github.com/sous-chefs/java/issues'
-chef_version '>= 15.0'
+chef_version '>= 13.4'
+
+attribute "java/install_jdk",
+          :description => "Flag to skip installing jdk. Default: true",
+          :type => 'string'
+
+attribute "java/override_java_home",
+          :description => "If set, it will override the JAVA_HOME environment variable",
+          :type => 'string'
