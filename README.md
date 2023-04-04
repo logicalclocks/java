@@ -82,10 +82,6 @@ Chef 13.4+
 - Windows
 - macOS
 
-### Cookbooks
-
-- homebrew
-
 ## Attributes
 
 See `attributes/default.rb` for default values.
